@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+*{
+    font-size:16px;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: zalando sans semi expanded, sans-serif;
+}
+:root{
+    --house-width: 20vw;     /* base width relative to viewport */
+    --roof-height-ratio: 0.45; /* roof height = ratio * width (0.45 = 45%) */
+    --body-aspect: 0.8;    /* body aspect ratio width/height */
+}
+body{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+.cEl{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    grid-area:"cu";
+}
+.triangle{
+    width:100%;
+    padding-bottom: calc(var(--roof-height-ratio) * 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+  .curtain{
+    width:100%;
+    /*aspect-ratio: var(--body-aspect);*/
+    height:50vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.434);
+  }
+
+.contain{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    gap:0 5rem 5rem 0;
+    width:100vw;
+}
+.logoDBPC{
+    width:25vw;
+    height:auto;
+}
+.logoDummy .logoDBPC{
+    display:none;
+}
+.logoDummy{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.logoMain{
+    padding-left:6vw;
+    padding-right:6vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height:100vh;
+    grid-area: "lo";
+}
+
+.nameTxt{
+    font-size:3vw;
+    color:white;
+    text-align:center;
+    margin-top:1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.scoreTxt{
+    font-size:5vw;
+    color:white;
+    text-align:center;
+    margin-top:1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.box{
+    width:50%;
+    height:auto;
+    padding:1rem;
+    background-color:rgba(255, 255, 255, 0.425);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:5vw;
+    border-radius:10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color:black;
+}
+.box h1{
+    background: -webkit-linear-gradient(#000000, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:8vw;
+}
+.scoreTxt sup{
+    font-size:2.5vw;
+}
+#bosco{
+    background-color:blue;
+}
+#savio{
+    background-color:red;
+}
+#rua{
+    background-color:green;
+}
+#francis{
+    background-color:yellow;
+}
+.break {
+  width: 100%;
+  height: 0; /* Or adjust as needed for visual spacing */
+}
+
+@media screen and (max-width: 425px) {
+    
+.logoMain{
+    display: none;
+}
+.logoDummy .logoDBPC{
+    display:initial;
+}
+.curtain{
+    height:30vh;
+}
+body{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+}
